@@ -19,31 +19,31 @@ const Footer = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
           >
-            <h3 className="text-2xl font-bold text-green-400 mb-4">
-            TEOCUTURE
+            <h3 className="text-2xl font-bold text-amber-500 mb-4">
+              TEOCUTURE
             </h3>
             <p className="text-gray-300 mb-6">
-            A fashion brand redefining elegance through couture tailoring and stylish ready-to-wear collections.
+              A fashion brand redefining elegance through couture tailoring and stylish ready-to-wear collections.
             </p>
             <div className="flex space-x-4">
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 href="#"
-                className="text-gray-400 hover:text-green-400 transition-colors"
+                className="text-gray-400 hover:text-amber-500 transition-colors"
               >
                 <Facebook className="h-6 w-6" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 href="#"
-                className="text-gray-400 hover:text-green-400 transition-colors"
+                className="text-gray-400 hover:text-amber-500 transition-colors"
               >
                 <Instagram className="h-6 w-6" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1 }}
                 href="#"
-                className="text-gray-400 hover:text-green-400 transition-colors"
+                className="text-gray-400 hover:text-amber-500 transition-colors"
               >
                 <Twitter className="h-6 w-6" />
               </motion.a>
@@ -69,7 +69,7 @@ const Footer = () => {
                   <motion.a
                     whileHover={{ x: 5 }}
                     href="#"
-                    className="text-gray-300 hover:text-green-400 transition-all duration-200"
+                    className="text-gray-300 hover:text-amber-500 transition-all duration-200"
                   >
                     {link}
                   </motion.a>
@@ -97,7 +97,7 @@ const Footer = () => {
                   <motion.a
                     whileHover={{ x: 5 }}
                     href="#"
-                    className="text-gray-300 hover:text-green-400 transition-all duration-200"
+                    className="text-gray-300 hover:text-amber-500 transition-all duration-200"
                   >
                     {link}
                   </motion.a>
@@ -115,15 +115,15 @@ const Footer = () => {
             <h4 className="text-lg font-semibold mb-4">Get in Touch</h4>
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3">
-                <MapPin className="h-5 w-5 text-green-400" />
+                <MapPin className="h-5 w-5 text-amber-500" />
                 <span className="text-gray-300 text-sm">Lagos, Nigeria</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-green-400" />
+                <Phone className="h-5 w-5 text-amber-500" />
                 <span className="text-gray-300 text-sm">+234 9060295114</span>
               </div>
               <div className="flex items-center space-x-3">
-                <Mail className="h-5 w-5 text-green-400" />
+                <Mail className="h-5 w-5 text-amber-500" />
                 <span className="text-gray-300 text-sm">
                   osasonadabira@gmail.com
                 </span>
@@ -140,14 +140,14 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your email"
-                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-sm"
+                  className="flex-1 px-3 py-2 bg-gray-800 border border-gray-700 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-amber-500 text-sm"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-r-lg transition-colors"
+                  className="bg-amber-600 hover:bg-amber-700 px-4 py-2 rounded-r-lg transition-colors"
                 >
-                  <Mail className="h-4 w-4" />
+                  <Mail className="h-4 w-4 text-white" />
                 </motion.button>
               </div>
             </div>
@@ -155,7 +155,6 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -163,21 +162,20 @@ const Footer = () => {
           className="border-t border-gray-800 mt-12 pt-8 flex flex-col justify-between items-center"
         >
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            &copy; {new Date().getFullYear()} TEOCUTURE. All rights reserved.
-            Made with ❤️ in Nigeria.
+            &copy; {new Date().getFullYear()} TEOCUTURE. All rights reserved. Made with ❤️ in Nigeria.
           </p>
           <div className="flex space-x-2 text-sm">
             <motion.a
               whileHover={{ scale: 1.05 }}
               href="#"
-              className="text-gray-400 hover:text-green-400 transition-colors"
+              className="text-gray-400 hover:text-amber-500 transition-colors"
             >
               Privacy Policy
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.05 }}
               href="#"
-              className="text-gray-400 hover:text-green-400 transition-colors"
+              className="text-gray-400 hover:text-amber-500 transition-colors"
             >
               Terms of Service
             </motion.a>

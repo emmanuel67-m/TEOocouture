@@ -12,7 +12,6 @@ const Index = () => {
   const { theme } = useStore();
 
   useEffect(() => {
-    // Apply theme class to document
     if (theme === "dark") {
       document.documentElement.classList.add("dark");
     } else {
@@ -43,7 +42,7 @@ const Index = () => {
               Why Choose TEOCUTURE?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-            Teocouture is a fashion brand that specializes in couture tailoring and premium ready-to-wear garments that celebrate individuality, elegance, and culture.
+              Teocouture is a fashion brand that specializes in couture tailoring and premium ready-to-wear garments that celebrate individuality, elegance, and culture.
             </p>
           </motion.div>
 
@@ -52,20 +51,17 @@ const Index = () => {
               {
                 icon: "🇳🇬",
                 title: "Authentic Nigerian",
-                description:
-                  "Genuine traditional designs crafted by skilled local artisans with years of experience",
+                description: "Genuine traditional designs crafted by skilled local artisans with years of experience",
               },
               {
                 icon: "✨",
                 title: "Premium Quality",
-                description:
-                  "High-quality fabrics sourced locally, ensuring durability and comfort in every piece",
+                description: "High-quality fabrics sourced locally, ensuring durability and comfort in every piece",
               },
               {
                 icon: "🚚",
                 title: "Fast Delivery",
-                description:
-                  "Quick and reliable shipping across Nigeria with careful packaging and tracking",
+                description: "Quick and reliable shipping across Nigeria with careful packaging and tracking",
               },
             ].map((feature, index) => (
               <motion.div
@@ -90,7 +86,7 @@ const Index = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-green-600 dark:bg-green-700">
+      <section className="py-20 bg-amber-800 dark:bg-amber-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -100,17 +96,16 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Stay Updated
             </h2>
-            <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
-              Be the first to know about new collections, exclusive offers, and
-              cultural events.
+            <p className="text-xl text-amber-100 mb-8 max-w-2xl mx-auto">
+              Be the first to know about new collections, exclusive offers, and cultural events.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-green-300"
+                className="flex-1 px-6 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-300"
               />
-              <button className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-amber-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
                 Subscribe
               </button>
             </div>

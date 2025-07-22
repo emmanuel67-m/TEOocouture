@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Star, ShoppingCart, Heart, ZoomIn, Minus, Plus } from 'lucide-react';
@@ -47,9 +46,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
           <div className="p-6">
             {/* Header */}
             <div className="flex justify-between items-center mb-6">
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
-                Product Details
-              </h2>
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Product Details</h2>
               <button
                 onClick={onClose}
                 className="p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition-colors"
@@ -75,7 +72,6 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
                     <ZoomIn className="h-5 w-5" />
                   </button>
                 </div>
-                
                 {product.images.length > 1 && (
                   <div className="flex space-x-2">
                     {product.images.map((image, index) => (
@@ -84,7 +80,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
                         onClick={() => setSelectedImageIndex(index)}
                         className={`w-20 h-20 rounded-lg overflow-hidden border-2 ${
                           index === selectedImageIndex
-                            ? 'border-green-500'
+                            ? 'border-amber-800'
                             : 'border-gray-200 dark:border-gray-600'
                         }`}
                       >
@@ -102,9 +98,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
               {/* Product Info */}
               <div className="space-y-6">
                 <div>
-                  <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                    {product.name}
-                  </h1>
+                  <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{product.name}</h1>
                   <div className="flex items-center space-x-2 mb-4">
                     <div className="flex items-center">
                       {[...Array(5)].map((_, i) => (
@@ -112,7 +106,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
                           key={i}
                           className={`h-5 w-5 ${
                             i < Math.floor(product.rating)
-                              ? 'text-yellow-400 fill-current'
+                              ? 'text-yellow-500 fill-current'
                               : 'text-gray-300'
                           }`}
                         />
@@ -125,7 +119,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
                 </div>
 
                 <div className="flex items-center space-x-4">
-                  <span className="text-3xl font-bold text-green-600">
+                  <span className="text-3xl font-bold text-amber-800">
                     ₦{product.price.toLocaleString()}
                   </span>
                   {product.originalPrice && (
@@ -141,9 +135,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
 
                 {/* Size Selection */}
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                    Size
-                  </h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Size</h3>
                   <div className="flex space-x-2">
                     {product.sizes.map((size) => (
                       <button
@@ -151,8 +143,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
                         onClick={() => setSelectedSize(size)}
                         className={`px-4 py-2 rounded-lg border-2 font-medium transition-colors ${
                           selectedSize === size
-                            ? 'border-green-500 bg-green-50 text-green-700 dark:bg-green-900 dark:text-green-300'
-                            : 'border-gray-300 dark:border-gray-600 hover:border-green-300'
+                            ? 'border-amber-800 bg-amber-100 text-amber-900 dark:bg-amber-900 dark:text-amber-100'
+                            : 'border-gray-300 dark:border-gray-600 hover:border-amber-400'
                         }`}
                       >
                         {size}
@@ -163,9 +155,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
 
                 {/* Quantity */}
                 <div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
-                    Quantity
-                  </h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Quantity</h3>
                   <div className="flex items-center space-x-4">
                     <div className="flex items-center border border-gray-300 dark:border-gray-600 rounded-lg">
                       <button
@@ -190,7 +180,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
                   <button
                     onClick={handleAddToCart}
                     disabled={!product.availability}
-                    className="flex-1 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors"
+                    className="flex-1 bg-amber-800 hover:bg-amber-900 disabled:bg-gray-400 text-white px-6 py-3 rounded-lg font-semibold flex items-center justify-center space-x-2 transition-colors"
                   >
                     <ShoppingCart className="h-5 w-5" />
                     <span>{product.availability ? 'Add to Cart' : 'Out of Stock'}</span>
@@ -202,8 +192,8 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
 
                 {/* Availability */}
                 <div className="flex items-center space-x-2">
-                  <div className={`w-3 h-3 rounded-full ${product.availability ? 'bg-green-500' : 'bg-red-500'}`} />
-                  <span className={`text-sm ${product.availability ? 'text-green-600' : 'text-red-600'}`}>
+                  <div className={`w-3 h-3 rounded-full ${product.availability ? 'bg-amber-700' : 'bg-red-500'}`} />
+                  <span className={`text-sm ${product.availability ? 'text-amber-700' : 'text-red-600'}`}>
                     {product.availability ? 'In Stock' : 'Out of Stock'}
                   </span>
                 </div>
@@ -213,17 +203,13 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
             {/* Reviews Section */}
             {product.reviews.length > 0 && (
               <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-600">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                  Customer Reviews
-                </h3>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">Customer Reviews</h3>
                 <div className="space-y-4">
                   {product.reviews.map((review) => (
                     <div key={review.id} className="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg">
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center space-x-2">
-                          <span className="font-semibold text-gray-900 dark:text-white">
-                            {review.userName}
-                          </span>
+                          <span className="font-semibold text-gray-900 dark:text-white">{review.userName}</span>
                           <div className="flex items-center">
                             {[...Array(5)].map((_, i) => (
                               <Star
@@ -237,9 +223,7 @@ const ProductDetail: React.FC<ProductDetailProps> = ({ product, isOpen, onClose 
                             ))}
                           </div>
                         </div>
-                        <span className="text-sm text-gray-500">
-                          {new Date(review.date).toLocaleDateString()}
-                        </span>
+                        <span className="text-sm text-gray-500">{new Date(review.date).toLocaleDateString()}</span>
                       </div>
                       <p className="text-gray-700 dark:text-gray-300">{review.comment}</p>
                     </div>

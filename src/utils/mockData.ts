@@ -10,7 +10,7 @@ export const mockProducts: Product[] = [
       "https://i.pinimg.com/1200x/33/f8/da/33f8da6a8e745431fe3950652d20a5b6.jpg",
     images: [
       "https://i.pinimg.com/1200x/33/f8/da/33f8da6a8e745431fe3950652d20a5b6.jpg",
-      "	https://i.pinimg.com/736x/99/b9/bd/99b9bd3140c97c06d3d979b289d02999.jpg",
+      "https://i.pinimg.com/736x/99/b9/bd/99b9bd3140c97c06d3d979b289d02999.jpg",
     ],
     category: "Ready-to-Wear",
     description:
@@ -43,9 +43,9 @@ export const mockProducts: Product[] = [
     name: "Classic Agbada Set",
     price: 45000,
     image:
-      "	https://i.pinimg.com/1200x/80/8e/d0/808ed045138628a1d6d437f444de5b25.jpg",
+      "https://i.pinimg.com/1200x/80/8e/d0/808ed045138628a1d6d437f444de5b25.jpg",
     images: [
-      "	https://i.pinimg.com/1200x/80/8e/d0/808ed045138628a1d6d437f444de5b25.jpg",
+      "https://i.pinimg.com/1200x/80/8e/d0/808ed045138628a1d6d437f444de5b25.jpg",
     ],
     category: "Ready-to-Wear",
     description:
@@ -87,9 +87,9 @@ export const mockProducts: Product[] = [
     name: "Traditional Gele Headwrap",
     price: 8000,
     image:
-      "	https://i.pinimg.com/736x/6b/7e/e0/6b7ee05b8442c94e460c369b9d22b8f6.jpg",
+      "https://i.pinimg.com/736x/6b/7e/e0/6b7ee05b8442c94e460c369b9d22b8f6.jpg",
     images: [
-      "	https://i.pinimg.com/736x/6b/7e/e0/6b7ee05b8442c94e460c369b9d22b8f6.jpg",
+      "https://i.pinimg.com/736x/6b/7e/e0/6b7ee05b8442c94e460c369b9d22b8f6.jpg",
     ],
     category: "Ready-to-Wear",
     description:
@@ -124,7 +124,6 @@ export const mockProducts: Product[] = [
       "https://i.pinimg.com/736x/b7/4a/9c/b74a9c24f5e3f231621e3efc7e0f32f5.jpg",
     images: [
       "https://i.pinimg.com/736x/b7/4a/9c/b74a9c24f5e3f231621e3efc7e0f32f5.jpg",
-      
     ],
     category: "Ready-to-Wear",
     description:
@@ -139,9 +138,9 @@ export const mockProducts: Product[] = [
     name: "Kente Cloth Stole",
     price: 18000,
     image:
-      "	https://i.pinimg.com/1200x/5e/15/5e/5e155e6d119448653000c0650e1c8446.jpg",
+      "https://i.pinimg.com/1200x/5e/15/5e/5e155e6d119448653000c0650e1c8446.jpg",
     images: [
-      "	https://i.pinimg.com/1200x/5e/15/5e/5e155e6d119448653000c0650e1c8446.jpg",
+      "https://i.pinimg.com/1200x/5e/15/5e/5e155e6d119448653000c0650e1c8446.jpg",
     ],
     category: "Ready-to-Wear",
     description:
@@ -175,9 +174,9 @@ export const mockProducts: Product[] = [
     name: "Buba and Sokoto Set",
     price: 28000,
     image:
-      "	https://i.pinimg.com/736x/d3/62/07/d36207eb3c1237a88b0b84855581937e.jpg",
+      "https://i.pinimg.com/736x/d3/62/07/d36207eb3c1237a88b0b84855581937e.jpg",
     images: [
-      "	https://i.pinimg.com/736x/d3/62/07/d36207eb3c1237a88b0b84855581937e.jpg",
+      "https://i.pinimg.com/736x/d3/62/07/d36207eb3c1237a88b0b84855581937e.jpg",
     ],
     category: "Ready-to-Wear",
     description:
@@ -260,12 +259,10 @@ export const filterAndSortProducts = (
 ): Product[] => {
   let filtered = products;
 
-  // Filter by category
   if (category !== "Ready-to-Wear") {
     filtered = filtered.filter((product) => product.category === category);
   }
 
-  // Filter by search query
   if (searchQuery && searchQuery.trim() !== "") {
     const query = searchQuery.toLowerCase().trim();
     filtered = filtered.filter(
@@ -276,13 +273,11 @@ export const filterAndSortProducts = (
     );
   }
 
-  // Filter by price range
   filtered = filtered.filter(
     (product) =>
       product.price >= priceRange[0] && product.price <= priceRange[1]
   );
 
-  // Sort products
   switch (sortBy) {
     case "price-low":
       filtered.sort((a, b) => a.price - b.price);

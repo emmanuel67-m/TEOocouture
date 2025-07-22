@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Star, ShoppingBag, Eye } from 'lucide-react';
@@ -14,7 +13,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }) => {
   const { addToCart } = useStore();
 
   const handleAddToCart = () => {
-    // Default to first available size
     const defaultSize = product.sizes[0];
     addToCart(product, defaultSize);
   };
@@ -66,7 +64,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }) => {
         {/* Badges */}
         <div className="absolute top-3 left-3 flex flex-col space-y-1">
           {product.isNew && (
-            <span className="bg-green-500 text-white text-xs px-2 py-1 rounded-full font-semibold">
+            <span className="bg-amber-700 text-white text-xs px-2 py-1 rounded-full font-semibold">
               New
             </span>
           )}
@@ -93,17 +91,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }) => {
 
       {/* Content */}
       <div className="p-4">
-        {/* Category */}
         <div className="text-sm text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-1">
           {product.category}
         </div>
 
-        {/* Product Name */}
         <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2">
           {product.name}
         </h3>
 
-        {/* Rating */}
         <div className="flex items-center mb-3">
           <div className="flex items-center">
             {[...Array(5)].map((_, i) => (
@@ -122,10 +117,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }) => {
           </span>
         </div>
 
-        {/* Price */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center space-x-2">
-            <span className="text-xl font-bold text-green-600 dark:text-green-400">
+            <span className="text-xl font-bold text-amber-800 dark:text-amber-600">
               {formatPrice(product.price)}
             </span>
             {product.originalPrice && (
@@ -136,7 +130,6 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }) => {
           </div>
         </div>
 
-        {/* Add to Cart Button */}
         <motion.button
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -144,7 +137,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onQuickView }) => {
           disabled={!product.availability}
           className={`w-full py-2 px-4 rounded-lg font-semibold text-sm flex items-center justify-center space-x-2 transition-all duration-200 ${
             product.availability
-              ? 'bg-green-600 hover:bg-green-700 text-white shadow-md hover:shadow-lg'
+              ? 'bg-amber-800 hover:bg-amber-900 text-white shadow-md hover:shadow-lg'
               : 'bg-gray-300 text-gray-500 cursor-not-allowed'
           }`}
         >

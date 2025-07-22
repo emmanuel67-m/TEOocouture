@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import ProductCard from './ProductCard';
@@ -51,7 +50,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, title }) => {
   };
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-gray-900">
+    <section className="py-20 bg-[#F3EDE7] dark:bg-[#1f1f1f]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {title && (
           <motion.div
@@ -60,10 +59,10 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, title }) => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#6B4226] dark:text-white mb-6">
               {title}
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-green-600 to-emerald-600 mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-[#6B4226] mx-auto rounded-full"></div>
           </motion.div>
         )}
 
@@ -73,7 +72,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, title }) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-gray-600 dark:text-gray-400"
+            className="text-gray-700 dark:text-gray-400"
           >
             Showing <span className="font-semibold">{filteredProducts.length}</span> products
             {filters.category !== 'Ready-to-Wear' && (
@@ -93,7 +92,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, title }) => {
             <select
               value={filters.sortBy}
               onChange={(e) => useStore.getState().setFilters({ sortBy: e.target.value as any })}
-              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#6B4226]"
             >
               <option value="popularity">Sort by Popularity</option>
               <option value="price-low">Price: Low to High</option>
@@ -111,12 +110,12 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, title }) => {
             className="text-center py-20"
           >
             <div className="text-8xl mb-6">🛍️</div>
-            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <h3 className="text-2xl font-semibold text-[#6B4226] dark:text-white mb-4">
               No products found
             </h3>
-            <p className="text-gray-600 dark:text-gray-400 text-lg">
+            <p className="text-gray-700 dark:text-gray-400 text-lg">
               {searchQuery && searchQuery.trim() !== '' ? (
-                <>Try searching with different keywords or <button onClick={() => useStore.getState().setSearchQuery('')} className="text-green-600 hover:text-green-700 underline">clear your search</button></>
+                <>Try searching with different keywords or <button onClick={() => useStore.getState().setSearchQuery('')} className="text-[#6B4226] hover:underline">clear your search</button></>
               ) : (
                 'Try adjusting your filters or search terms'
               )}

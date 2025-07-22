@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Search, ShoppingBag, Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -22,15 +21,11 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Ready-to-Wear', value: 'Ready-to-Wear' },
-   
   ];
 
-  const handleCategoryChange = (category:  'Ready-to-Wear' ) => {
-    console.log('Changing category to:', category);
+  const handleCategoryChange = (category: 'Ready-to-Wear') => {
     setFilters({ category });
     setMobileMenuOpen(false);
-    
-    // Scroll to products section
     const productsSection = document.querySelector('#products-section');
     if (productsSection) {
       productsSection.scrollIntoView({ behavior: 'smooth' });
@@ -39,13 +34,11 @@ const Navbar = () => {
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const query = e.target.value;
-    console.log('Search query:', query);
     setSearchQuery(query);
   };
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
-    // Search is already handled in real-time, just scroll to products
     const productsSection = document.querySelector('#products-section');
     if (productsSection) {
       productsSection.scrollIntoView({ behavior: 'smooth' });
@@ -70,8 +63,8 @@ const Navbar = () => {
             className="flex-shrink-0 cursor-pointer"
             onClick={() => scrollToSection('#hero-section')}
           >
-            <h1 className="text-2xl font-bold text-green-600 dark:text-green-400">
-            TEOCUTURE
+            <h1 className="text-2xl font-bold text-yellow-700 dark:text-yellow-500">
+              TEOCUTURE
             </h1>
           </motion.div>
 
@@ -80,11 +73,11 @@ const Navbar = () => {
             {navItems.map((item) => (
               <motion.button
                 key={item.name}
-                onClick={() => handleCategoryChange(item.value as 'Ready-to-Wear' )}
+                onClick={() => handleCategoryChange(item.value as 'Ready-to-Wear')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                   filters.category === item.value
-                    ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300'
-                    : 'text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                    ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300'
+                    : 'text-gray-700 dark:text-gray-300 hover:text-yellow-700 dark:hover:text-yellow-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                 }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -92,11 +85,10 @@ const Navbar = () => {
                 {item.name}
               </motion.button>
             ))}
-            
-            {/* Quick Links */}
+
             <motion.button
               onClick={() => scrollToSection('#about-section')}
-              className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 text-sm font-medium"
+              className="text-gray-700 dark:text-gray-300 hover:text-yellow-700 dark:hover:text-yellow-400 px-4 py-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-200 text-sm font-medium"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -115,7 +107,7 @@ const Navbar = () => {
                 value={searchQuery}
                 onChange={handleSearchChange}
                 placeholder="Search Here..."
-                className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                className="block w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-700 focus:border-transparent transition-colors"
               />
             </form>
           </div>
@@ -125,7 +117,7 @@ const Navbar = () => {
             {/* Theme toggle */}
             <motion.button
               onClick={toggleTheme}
-              className="p-2 text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="p-2 text-gray-700 dark:text-gray-300 hover:text-yellow-700 dark:hover:text-yellow-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -135,7 +127,7 @@ const Navbar = () => {
             {/* Cart */}
             <motion.button
               onClick={() => setCartOpen(true)}
-              className="relative p-2 text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              className="relative p-2 text-gray-700 dark:text-gray-300 hover:text-yellow-700 dark:hover:text-yellow-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -192,22 +184,21 @@ const Navbar = () => {
                 {navItems.map((item) => (
                   <motion.button
                     key={item.name}
-                    onClick={() => handleCategoryChange(item.value as 'Ready-to-Wear'  )}
+                    onClick={() => handleCategoryChange(item.value as 'Ready-to-Wear')}
                     className={`w-full text-left px-4 py-3 rounded-lg text-base font-medium transition-colors ${
                       filters.category === item.value
-                        ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-300'
-                        : 'text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-gray-100 dark:hover:bg-gray-800'
+                        ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-300'
+                        : 'text-gray-700 dark:text-gray-300 hover:text-yellow-700 dark:hover:text-yellow-400 hover:bg-gray-100 dark:hover:bg-gray-800'
                     }`}
                     whileTap={{ scale: 0.95 }}
                   >
                     {item.name}
                   </motion.button>
                 ))}
-                
-                {/* Mobile Quick Link */}
+
                 <motion.button
                   onClick={() => scrollToSection('#about-section')}
-                  className="w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  className="w-full text-left px-4 py-3 rounded-lg text-base font-medium text-gray-700 dark:text-gray-300 hover:text-yellow-700 dark:hover:text-yellow-400 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                   whileTap={{ scale: 0.95 }}
                 >
                   About
