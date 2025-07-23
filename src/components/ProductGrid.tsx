@@ -38,19 +38,17 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, title }) => {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1
-      }
-    }
+      transition: { staggerChildren: 0.1 },
+    },
   };
 
   const item = {
     hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 }
+    show: { opacity: 1, y: 0 },
   };
 
   return (
-    <section className="py-20 bg-[#F3EDE7] dark:bg-[#1f1f1f]">
+    <section className="py-20 bg-[#E6BFCB] dark:bg-[#364C3D]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {title && (
           <motion.div
@@ -59,20 +57,20 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, title }) => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#6B4226] dark:text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#364C3D] dark:text-[#E6BFCB] mb-6">
               {title}
             </h2>
-            <div className="w-24 h-1 bg-[#6B4226] mx-auto rounded-full"></div>
+            <div className="w-24 h-1 bg-[#364C3D] dark:bg-[#E6BFCB] mx-auto rounded-full"></div>
           </motion.div>
         )}
 
         {/* Filter Info */}
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-gray-700 dark:text-gray-400"
+            className="text-[#364C3D] dark:text-[#E6BFCB]"
           >
             Showing <span className="font-semibold">{filteredProducts.length}</span> products
             {filters.category !== 'Ready-to-Wear' && (
@@ -82,8 +80,8 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, title }) => {
               <span> for "<span className="font-semibold">{searchQuery}</span>"</span>
             )}
           </motion.p>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
@@ -92,7 +90,7 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, title }) => {
             <select
               value={filters.sortBy}
               onChange={(e) => useStore.getState().setFilters({ sortBy: e.target.value as any })}
-              className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-[#6B4226]"
+              className="px-4 py-2 border border-[#B6C1A9] dark:border-[#E6BFCB] rounded-lg bg-white dark:bg-[#364C3D] text-[#364C3D] dark:text-[#E6BFCB] focus:outline-none focus:ring-2 focus:ring-[#364C3D]"
             >
               <option value="popularity">Sort by Popularity</option>
               <option value="price-low">Price: Low to High</option>
@@ -110,12 +108,20 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, title }) => {
             className="text-center py-20"
           >
             <div className="text-8xl mb-6">🛍️</div>
-            <h3 className="text-2xl font-semibold text-[#6B4226] dark:text-white mb-4">
+            <h3 className="text-2xl font-semibold text-[#364C3D] dark:text-[#E6BFCB] mb-4">
               No products found
             </h3>
-            <p className="text-gray-700 dark:text-gray-400 text-lg">
-              {searchQuery && searchQuery.trim() !== '' ? (
-                <>Try searching with different keywords or <button onClick={() => useStore.getState().setSearchQuery('')} className="text-[#6B4226] hover:underline">clear your search</button></>
+            <p className="text-[#364C3D] dark:text-[#E6BFCB] text-lg">
+              {searchQuery?.trim() ? (
+                <>
+                  Try searching with different keywords or{' '}
+                  <button
+                    onClick={() => useStore.getState().setSearchQuery('')}
+                    className="text-[#B6C1A9] hover:underline"
+                  >
+                    clear your search
+                  </button>
+                </>
               ) : (
                 'Try adjusting your filters or search terms'
               )}
@@ -138,7 +144,6 @@ const ProductGrid: React.FC<ProductGridProps> = ({ products, title }) => {
         )}
       </div>
 
-      {/* Product Detail Modal */}
       {selectedProduct && (
         <ProductDetail
           product={selectedProduct}

@@ -20,7 +20,7 @@ const Index = () => {
   }, [theme]);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-[#ffffff] dark:bg-[#374D45] transition-colors duration-300">
       <Navbar />
       <Hero />
 
@@ -30,7 +30,7 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about-section" className="py-20 bg-white dark:bg-gray-800">
+      <section id="about-section" className="py-20 bg-[#ffffff] dark:bg-[#BFC8B1]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -38,10 +38,10 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#374D45] dark:text-white mb-6">
               Why Choose TEOCUTURE?
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="text-xl text-[#555] dark:text-[#374D45] max-w-3xl mx-auto">
               Teocouture is a fashion brand that specializes in couture tailoring and premium ready-to-wear garments that celebrate individuality, elegance, and culture.
             </p>
           </motion.div>
@@ -70,13 +70,13 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.2 }}
-                className="text-center p-8 bg-gray-50 dark:bg-gray-700 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                className="text-center p-8 bg-[#F3F4F3] dark:bg-[#E8BFC4] rounded-2xl shadow-sm hover:shadow-md transition-shadow"
               >
                 <div className="text-5xl mb-6">{feature.icon}</div>
-                <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+                <h3 className="text-2xl font-semibold text-[#374D45] dark:text-white mb-4">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                <p className="text-[#555] dark:text-[#374D45] leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>
@@ -86,7 +86,7 @@ const Index = () => {
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-amber-800 dark:bg-amber-900">
+      <section className="py-20 bg-[#374D45] dark:bg-[#374D45]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -96,16 +96,16 @@ const Index = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Stay Updated
             </h2>
-            <p className="text-xl text-amber-100 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl text-[#E8BFC4] mb-8 max-w-2xl mx-auto">
               Be the first to know about new collections, exclusive offers, and cultural events.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-6 py-3 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-amber-300"
+                className="flex-1 px-6 py-3 rounded-lg text-[#374D45] focus:outline-none focus:ring-2 focus:ring-[#E8BFC4]"
               />
-              <button className="bg-white text-amber-800 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-[#374D45] px-8 py-3 rounded-lg font-semibold hover:bg-[#f1f1f1] transition-colors">
                 Subscribe
               </button>
             </div>
